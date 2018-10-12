@@ -23,10 +23,14 @@ def call(Map config) {
                     result = "ERROR"
                     break
             }
+            /* java.lang.IllegalArgumentException: The supplied credentials are invalid to login
+             * probably due to changing the account from me to daos-jenkins
+             * might need to just recreate the org with the daos-jenkins account
             githubNotify description: ${config.name}, context:
                                       ${config.context} + "/" +
                                       ${config.name},
                                       status: result
+            */
         }
     }
 }
